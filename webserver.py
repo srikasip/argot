@@ -12,6 +12,10 @@ listen_socket.listen(1)
 print 'Serving HTTP on port %s ...' % prt
 while True:
     client_connection, client_address = listen_socket.accept()
+    print "Address:"
+    print client_address
+    print "Connection:"
+    print client_connection
     request = client_connection.recv(1024)
     print "True: "
     print request
