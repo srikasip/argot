@@ -1,6 +1,7 @@
 import socket
+import os
 
-HOST, PORT = '', 8888
+HOST, PORT = '0.0.0.0', int(os.environ.get('PORT', '8888'))
 
 listen_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 listen_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
