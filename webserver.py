@@ -9,11 +9,12 @@ def app(environ, start_response):
   #Get Params and put them in a sensible dictionary
   sentParams = environ["QUERY_STRING"].split('&')
   params = {}
-  for param in sentParams: 
-    param = param.strip()
-    parts = param.split("=")
-    if len(parts)>=2:
-      params[parts[0]] = parts[1]
+  if len(sentParams)>0:
+    for param in sentParams: 
+      param = param.strip()
+      parts = param.split("=")
+      if len(parts)>=2:
+        params[parts[0]] = parts[1]
 
 
   if mainPath != "static":
@@ -32,4 +33,3 @@ def app(environ, start_response):
 
     return iter([data])
 
-  
