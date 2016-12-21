@@ -52,10 +52,10 @@ def app(environ, start_response):
     with open(fileLocation) as myFile:
       data = myFile.read()
 
-    start_response("200 OK", [
-      ("Content-Type", content_type),
-      ("Content-Length", str(len(data)))
-      ])
+  start_response("200 OK", [
+    ("Content-Type", content_type),
+    ("Content-Length", str(len(data)))
+    ])
 
   if data:
     return iter([data])
