@@ -42,8 +42,10 @@ def app(environ, start_response):
       content_type = "text/css"
     elif ending == "js":
       content_type = "application/javascript"
-    elif ending in ["jpg", "jpeg", "png", "ico", "gif"]:
+    elif ending in ["jpg", "jpeg", "png", "gif"]:
       content_type = "image/" + ending
+    elif ending ==  "ico":
+      content_type = "image/x-icon"
     else:
       content_type = ""
 
