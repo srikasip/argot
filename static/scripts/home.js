@@ -21,7 +21,7 @@ function newPage_func()
   },1600);
   
   setTimeout(function() {
-    window.location.href = "canvas.html";
+    window.location.href = "canvas";
   }, 1700);
 }
 
