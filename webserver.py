@@ -1,3 +1,5 @@
+from StaticHelper import StaticHelper as static
+
 def app(environ, start_response):
   data = ""
   #Get Subpath and figure out which page the user should go to, but ignore "subpaths"
@@ -30,27 +32,9 @@ def app(environ, start_response):
       content_type = "text/html"
 
   else:
-    fileLocation = environ["PATH_INFO"][1:]
-    extension_parts = fileLocation.split(".")
-    ending = ""
-    
-
-    if len(extension_parts)>1:
-      ending = extension_parts[1]
-
-    if ending == "css":
-      content_type = "text/css"
-    elif ending == "js":
-      content_type = "application/javascript"
-    elif ending in ["jpg", "jpeg", "png", "gif"]:
-      content_type = "image/" + ending
-    elif ending ==  "ico":
-      content_type = "image/x-icon"
-    else:
-      content_type = ""
-
-    with open(fileLocation) as myFile:
-      data = myFile.read()
+    #Get the static content resource that is being asked for
+    staticHelper = static()
+    data, content_type = staticHelper.GetStaticContent(environ["PATH_INFO"][1:])
 
   start_response("200 OK", [
     ("Content-Type", content_type),
