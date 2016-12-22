@@ -1,4 +1,7 @@
-h1
+h1.title
 {
   font-family:"Dancing Script";
+  font-size:2em;
+  padding-top:0.25em;
+  margin-left: 16px;
 }

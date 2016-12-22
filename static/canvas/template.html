@@ -4,6 +4,7 @@
     <link href="https://fonts.googleapis.com/css?family=Droid+Serif" rel="stylesheet">
     <link rel="stylesheet" href="static/canvas/css/main.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js" type="application/javascript"></script>
+    <script src="static/canvas/scripts/main.js" type="application/javascript"></script>
 
 
   </head>
@@ -17,6 +18,11 @@
     </div>
     <div class="mainContent">
       <div class="sidebar">
+        <div id="sidebar-menu">
+          <label id="toolboxBtn">Toolbox</label>
+          <label id="pageBrowserBtn">Project Pages</label>
+        </div>
+        <img src="static/canvas/images/back-btn.png" alt="toolbox hider" id="sideHideClicker" class="sideClicker">
         <div class="toolbox">
           <template>toolbox.html</template>
         </div>
@@ -29,8 +35,8 @@
       </div>
       <div class="margotInterface">
         <template>margotInterface.html</template>
+        <img src="static/canvas/images/next-btn.png" alt="margot hider" class="margotClicker">
       </div>
     </div>
-
   </body>
 </html>
