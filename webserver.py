@@ -1,13 +1,11 @@
 from StaticHelper import StaticHelper as static
+from DynamicHelper import DynamicHelper as dynamic
 
 def app(environ, start_response):
   data = ""
-  #Get Subpath and figure out which page the user should go to, but ignore "subpaths"
-  subpaths = environ["PATH_INFO"].split('/')
-  mainPath = ""
-  if len(subpaths)>=2:
-    mainPath = subpaths[1]
 
+  #Get Subpath and figure out which page the user should go to, but ignore "subpaths"
+  mainPath, fullPath = GetPathString(environ["PATH_INFO"])
 
   #Get Params and put them in a sensible dictionary
   sentParams = environ["QUERY_STRING"].split('&')
@@ -22,19 +20,11 @@ def app(environ, start_response):
   content_type = ""
   if mainPath != "static":
     #Route the user to the right page
-    if mainPath == "canvas":
-      data = "You're in the <strong>canvas</strong>!  We are working on it!\n"
-      content_type = "text/plain"
-
-    else:
-      with open('static/home.html', 'r') as myHome:
-        data = myHome.read()
-      content_type = "text/html"
+    data, content_type = dynamic.GetDynamicContent(mainPath)
 
   else:
     #Get the static content resource that is being asked for
-    staticHelper = static()
-    data, content_type = staticHelper.GetStaticContent(environ["PATH_INFO"][1:])
+    data, content_type = static.GetStaticContent(fullPath)
 
   start_response("200 OK", [
     ("Content-Type", content_type),
@@ -46,3 +36,15 @@ def app(environ, start_response):
   else:
     return ""
 
+def GetPathString(path_info):
+  subpaths = path_info.split('/')
+  mainPath = ""
+  if len(subpaths)>=2:
+    mainPath = subpaths[1]
+
+  fullpath = path_info[1:]
+  if fullpath == "favicon.ico":
+    mainPath = "static"
+    fullpath = "static/images/favicon.ico"
+
+  return mainPath, fullpath

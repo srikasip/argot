@@ -2,7 +2,8 @@ class StaticHelper:
   def __init__(self):
     self.initiated = True
 
-  def GetStaticContent(self, fileLocation):
+  @staticmethod
+  def GetStaticContent(fileLocation):
     extension_parts = fileLocation.split(".")
     ending = ""
     
