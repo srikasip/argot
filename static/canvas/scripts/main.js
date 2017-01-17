@@ -28,22 +28,4 @@ $(document).ready(function(){
       $(".margotInterface").css("right", "0px");
     }
   });
-
-  $("#sidebar-menu label").click(function(){
-    var menuName = $(this).attr("id");
-    switch(menuName)
-    {
-      case "pageBrowserBtn":
-        $(".toolbox").css("display", "none");
-        $(".fileBrowser").css("display", "block");
-        break;
-      case "toolboxBtn":
-        $(".fileBrowser").css("display", "none");
-        $(".toolbox").css("display", "block");
-        break;
-      default:
-        alert(menuName + " clicked");
-        break;
-    }
-  });
 });

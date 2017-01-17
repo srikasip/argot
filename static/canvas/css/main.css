@@ -34,7 +34,7 @@ html, body
   float:left;
   background-color: #eeeeee;
   position:absolute;
-  left:0;
+  left:-206px;
   top:0;
   border-right:1px Solid #eeeeee;
 }
@@ -46,37 +46,7 @@ html, body
   right:-15px;
   top:45%;
   cursor:pointer;
-
 }
-
-#sidebar-menu
-{
-  height:1.5em;
-  width:100%;
-  background-color: rgba(0,0,0,0.75);
-  color:#ffffff;
-  float:none;
-  font-size:0.6em;
-  padding-top:0.3em;
-  padding-left:1px;
-}
-#sidebar-menu label
-{
-  width:40%;
-  text-align:center;
-  margin-left:16px;
-  cursor:pointer;
-
-}
-#sidebar-menu label:hover
-{
-  background-color: rgba(255,255,255,0.3);
-}
-#sidebar-menu label:active
-{
-  background-color: rgba(255,255,255,0.5);
-}
-
 .canvas
 {
   height:100%;
@@ -84,18 +54,10 @@ html, body
   float:left;
   background-color: #dedede;
 }
-.toolbox
-{
-  height:100%;
-  width:100%;
-  background-color: #eeeeee;
-  display:none;
-}
 .fileBrowser
 {
   height:100%;
   width:100%;
-  display:none;
   background-color: #eeeeee;
 }
 .margotInterface
@@ -117,5 +79,46 @@ html, body
   left:-15px;
   top:45%;
   cursor:pointer;
+}
+.toolbox
+{
+  height:75%;
+  width:15em;
+  background-color: #ffffff;
+  position:absolute;
+  bottom:10px;
+  right:10px;
 
+  display:none;
+}
+.xbar
+{
+  height:1em;
+  padding:0.25em;
+  margin:0;
+  background-color:#eeeeee;
+}
+
+.xbar .close
+{
+  height:1em;
+  width:1em;
+  border-radius: 0.5em 0.5em 0.5em 0.5em;
+  background-color:#e06666;
+  float:left;
+  cursor:pointer;
+}
+.xbar .close:hover
+{
+  background-color:#e03333;
+}
+.xbar .close:active
+{
+  background-color:#e00000;
+}
+.xbar div.barTitle
+{
+  float:left;
+  text-align:center;
+  width:12.5em;
 }

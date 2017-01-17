@@ -15,5 +15,3 @@ $(document).ready(function(){
     //TODO: Call AJAX to actually save the name of the project.
   });
 });
-
-//<h1 id="lblProjectTitle" class="title" default-text="Untitled App">Untitled App</h1>
