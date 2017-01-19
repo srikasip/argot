@@ -7,22 +7,21 @@ function newPage_func()
   $(".nextpage").css("background-color", "#f2f2f2");
   $(".nextpage").css("display", "block");
 
-  $("#codeman").css("z-index", "9");
-  $("#codeman").css("position", "absolute");
+  $("#codeman").css("z-index", "0");
   
   $(".nextpage").animate({
     left: '0'
   }, 800);
 
-  $("#codeman").animate({
-    width:"4em",
-    top:"0.5em",
-    right:"-1.5em"
-  },1600);
+  // $("#codeman").animate({
+  //   width:"4em",
+  //   top:"0.5em",
+  //   right:"-1.5em"
+  // },1600);
   
   setTimeout(function() {
     window.location.href = "canvas";
-  }, 1700);
+  }, 900);
 }
 
 $(document).ready(function(){
@@ -43,9 +42,8 @@ $(document).ready(function(){
   $(".reset").click(function(){
       $("#typed").typed('reset');
   });
-
   $(".nextpage_link").click(function(){
-    newPage_func()
+    newPage_func();
   });
 
 });

@@ -30,7 +30,7 @@ class DynamicHelper:
       content_type = "text/html"
 
     else:
-      with open('static/home.html', 'r') as myHome:
+      with open('static/bootstrap-home.html', 'r') as myHome:
         data = myHome.read()
       content_type = "text/html"
 
