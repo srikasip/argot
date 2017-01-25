@@ -1,36 +1,44 @@
 {
   "toolbox" : [
     {
+      "unique_id": "a",
+      "type": "navigation",
       "tag": "a",
       "display_name": "link",
       "description": "This is a link that lets a user browse to other places and download things",
-      "attributes" : [
-        {
-          "attribute": "href", 
-          "display_name": "Destination URL", 
-          "description": "The destination that browswer is redirected to",
-          "expected_value": "string",
-          "required": true
-        },
-        {
-          "attribute": "download", 
-          "display_name": "Is Download?",
-          "description": "Tells the browser that something is being downloaded and allows you to set the download name for the user",
-          "expected_value": "string",
-          "required": false 
-        },
-        {
-          "attribute": "target", 
-          "display_name": "Where link opens", 
-          "description": "Tells the browser whether to open in a new tab, new window, or on top of the same page.",
-          "expected_value": "enum",
-          "enums": [
-            {"enum": "_blank", "description": "opens in a new tab/window"},
-            {"enum": "_self", "description": "opens in the same page"}
-          ], 
-          "required": false
-        }
-      ]
+      "code_block": "<a href='#'>link</a>"
+    },
+    {
+      "unique_id": "input_txt",
+      "type": "form",
+      "tag": "input",
+      "display_name": "textbox",
+      "description": "This is a textbox so users can type stuff",
+      "code_block": "<input type='text' value='textbox'>"
+    },
+    {
+      "unique_id": "img",
+      "type": "media",
+      "tag": "img",
+      "display_name": "image",
+      "description": "This is an image that will be displayed. You'll need a url.",
+      "code_block": "<img src='img/url/here.png' alt='alt image text' />"
+    },
+    {
+      "unique_id": "div",
+      "type": "layout",
+      "tag": "div",
+      "display_name": "container",
+      "description": "This is an arbitrary container",
+      "code_block": "<div></div>"
+    },
+    {
+      "unique_id": "label",
+      "type": "text",
+      "tag": "label",
+      "display_name": "label",
+      "description": "This is a random label to throw around",
+      "code_block": "<label></label>"
     }
   ]
 }

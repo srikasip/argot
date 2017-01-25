@@ -4,12 +4,23 @@
 }
 .toolbox-item
 {
-  width:7em;
-  height:7em;
-  margin-left:1em;
+  width:4em;
+  height:4em;
+  margin-left:1.5em;
   margin-top:0.5em;
   margin-bottom:0.5em;
   float:left;
+  text-align:center;
+}
+.toolbox-item span
+{
+  font-size:0.6em;
+}
+.tooltip
+{
+  font-size: 0.6em;
+  z-index:99;
+  position:fixed;
 }
 .arbitraryObject
 {

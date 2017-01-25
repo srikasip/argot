@@ -10,12 +10,12 @@ html, body
 
 .header
 {
-  height:3em;
+  /*height:3em;*/
   width:100%;
 }
 .toolbar
 {
-  height:1em;
+  /*height:1em;*/
   padding-top:0.4em;
   width:100%;
   border-bottom:1px Solid #eeeeee;
@@ -83,7 +83,7 @@ html, body
 .toolbox
 {
   height:75%;
-  width:15em;
+  width:18em;
   background-color: #ffffff;
   position:absolute;
   bottom:10px;
@@ -94,32 +94,40 @@ html, body
 }
 .xbar
 {
-  height:1em;
-  padding:0.25em;
+  /*height:1.5ex;*/
+  height:2em;
+  width:100%;
+  padding-top:0.5em;
+  padding-bottom:0.5em;
   margin:0;
   background-color:#eeeeee;
+  text-align:center;
+  vertical-align: top;
 }
 
 .xbar .close
 {
   height:1em;
   width:1em;
+  border-size:0px;
   border-radius: 0.5em 0.5em 0.5em 0.5em;
-  background-color:#e06666;
+  background-color:#e03333;
   float:left;
   cursor:pointer;
+  margin-left:0.5em;
+  
 }
 .xbar .close:hover
 {
-  background-color:#e03333;
+  background-color:#e00000;
 }
 .xbar .close:active
 {
-  background-color:#e00000;
+  background-color:#f00000;
 }
 .xbar div.barTitle
 {
   float:left;
   text-align:center;
-  width:12.5em;
+  width:16.5em;
 }
