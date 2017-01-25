@@ -19,6 +19,8 @@ class StaticHelper:
       content_type = "image/" + ending
     elif ending ==  "ico":
       content_type = "image/x-icon"
+    elif ending == "json":
+      content_type = "application/json"
     else:
       content_type = ""
 

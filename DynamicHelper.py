@@ -24,8 +24,6 @@ class DynamicHelper:
         mainHead.append(pageSoup.find("head"))
         mainHead.find("head").unwrap()
 
-
-
       data = str(templateSoup.prettify())
       content_type = "text/html"
 

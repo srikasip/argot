@@ -1,0 +1,36 @@
+{
+  "toolbox" : [
+    {
+      "tag": "a",
+      "display_name": "link",
+      "description": "This is a link that lets a user browse to other places and download things",
+      "attributes" : [
+        {
+          "attribute": "href", 
+          "display_name": "Destination URL", 
+          "description": "The destination that browswer is redirected to",
+          "expected_value": "string",
+          "required": true
+        },
+        {
+          "attribute": "download", 
+          "display_name": "Is Download?",
+          "description": "Tells the browser that something is being downloaded and allows you to set the download name for the user",
+          "expected_value": "string",
+          "required": false 
+        },
+        {
+          "attribute": "target", 
+          "display_name": "Where link opens", 
+          "description": "Tells the browser whether to open in a new tab, new window, or on top of the same page.",
+          "expected_value": "enum",
+          "enums": [
+            {"enum": "_blank", "description": "opens in a new tab/window"},
+            {"enum": "_self", "description": "opens in the same page"}
+          ], 
+          "required": false
+        }
+      ]
+    }
+  ]
+}
