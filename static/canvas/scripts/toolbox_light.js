@@ -32,10 +32,47 @@ function AddClickEvent(templateDictionary)
     unique_id = $(this).attr("data-value");
     code_template = templateDictionary[unique_id]["code_block"];
     objectThat = $(code_template);
-    $(objectThat).addClass("arbitraryObject");
-    $(".canvas").append(objectThat);
 
-    $(objectThat).draggable();
-    $(objectThat).resizable();
+    non_draggable_tags = ["input", "textarea", "button", "select", "option", "img"];
+    non_resizable_tags = ["a", "span", "textarea"];
+    $(objectThat).addClass("arbitraryObject");
+
+    if (non_draggable_tags.indexOf(templateDictionary[unique_id]["tag"])>=0)
+    {
+      $(objectThat).wrap("<div class='draggableWrapper'></div>");
+      objectThat = $(objectThat).parent();
+      $(objectThat).append("<img src='static/canvas/images/moveIcon_small.png' alt='(+)' class='mover' />");
+      $(".canvas").append(objectThat);
+      $(objectThat).draggable({
+        "handle":".mover"
+      });
+    }
+    else
+    {
+      //$(objectThat).addClass("arbitraryObject");
+      $(".canvas").append(objectThat);
+      $(objectThat).draggable();
+    }
+
+    
+    
+    if (non_resizable_tags.indexOf($(objectThat).prop("tagName").toLowerCase())<0)
+    {
+      $(objectThat).find(".arbitraryObject").resizable();
+      // if($(objectThat).children().length > 1)
+      // {
+      //    $(objectThat).children().each(function(i, child){
+      //     if (!$(child).hasClass("mover")) // && $(child).prop("tagName").toLowerCase() == "img"
+      //     {
+      //       $(child).resizable();
+      //     }
+      //    });
+      // }
+      // else
+      // {
+      //   $(objectThat).resizable();
+      // }
+      
+    }
   });
 }

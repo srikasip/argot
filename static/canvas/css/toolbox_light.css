@@ -24,10 +24,21 @@
 }
 .arbitraryObject
 {
-  position:relative;
-  border:dotted 1px #333333;
-  cursor:move;
   min-height:2em;
   min-width:2em;
-  
+}
+.draggableWrapper
+{
+  display:inline-block;
+  position:relative;
+  border:dotted 1px #333333;
+}
+.mover
+{
+  position:absolute;
+  top:-10px;
+  left:-10px;
+  height:20px;
+  width:20px;
+  cursor:move;
 }

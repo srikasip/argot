@@ -38,7 +38,7 @@
       "tag": "label",
       "display_name": "label",
       "description": "This is a random label to throw around",
-      "code_block": "<label></label>"
+      "code_block": "<label>label</label>"
     }
   ]
 }
