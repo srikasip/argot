@@ -15,7 +15,7 @@ function LoadToolbox()
     codeTemplates = {}
     $.each(tagData["toolbox"], function(i, tag){
       itemsString += "<button class='toolbox-item' data-value='"+tag["unique_id"]+"' data-placement='bottom' data-toggle='tooltip' title='" + tag["description"]+"'><span>"+tag["display_name"]+"</span></button>\n";
-      codeTemplates[tag["unique_id"]] = tag["code_block"];
+      codeTemplates[tag["unique_id"]] = tag;
     });
     //console.log(itemsString);
 
@@ -30,9 +30,12 @@ function AddClickEvent(templateDictionary)
 {
   $('button.toolbox-item').click(function(){
     unique_id = $(this).attr("data-value");
-    code_template = templateDictionary[unique_id];
+    code_template = templateDictionary[unique_id]["code_block"];
     objectThat = $(code_template);
     $(objectThat).addClass("arbitraryObject");
     $(".canvas").append(objectThat);
+
+    $(objectThat).draggable();
+    $(objectThat).resizable();
   });
 }
