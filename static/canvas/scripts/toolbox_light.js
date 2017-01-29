@@ -37,7 +37,7 @@ function AddClickEvent(templateDictionary)
     non_resizable_tags = ["a", "span", "textarea"];
     $(objectThat).addClass("arbitraryObject");
 
-    if (non_draggable_tags.indexOf(templateDictionary[unique_id]["tag"])>=0)
+    if(non_draggable_tags.indexOf(templateDictionary[unique_id]["tag"])>=0)
     {
       $(objectThat).wrap("<div class='draggableWrapper'></div>");
       objectThat = $(objectThat).parent();
@@ -54,25 +54,16 @@ function AddClickEvent(templateDictionary)
       $(objectThat).draggable();
     }
 
-    
-    
-    if (non_resizable_tags.indexOf($(objectThat).prop("tagName").toLowerCase())<0)
+    if (non_resizable_tags.indexOf(templateDictionary[unique_id]["tag"])<0)
     {
-      $(objectThat).find(".arbitraryObject").resizable();
-      // if($(objectThat).children().length > 1)
-      // {
-      //    $(objectThat).children().each(function(i, child){
-      //     if (!$(child).hasClass("mover")) // && $(child).prop("tagName").toLowerCase() == "img"
-      //     {
-      //       $(child).resizable();
-      //     }
-      //    });
-      // }
-      // else
-      // {
-      //   $(objectThat).resizable();
-      // }
-      
+      if ($(objectThat).hasClass("arbitraryObject"))
+      {
+        $(objectThat).resizable();
+      }
+      else
+      {
+        $(objectThat).find(".arbitraryObject").resizable();
+      }
     }
   });
 }

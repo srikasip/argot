@@ -26,12 +26,12 @@
 {
   min-height:2em;
   min-width:2em;
+  border:dotted 1px #333333;
 }
 .draggableWrapper
 {
   display:inline-block;
   position:relative;
-  border:dotted 1px #333333;
 }
 .mover
 {
