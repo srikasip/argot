@@ -30,7 +30,7 @@
       "tag": "div",
       "display_name": "container",
       "description": "This is an arbitrary container",
-      "code_block": "<div>div</div>"
+      "code_block": "<div></div>"
     },
     {
       "unique_id": "label",
